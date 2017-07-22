@@ -64,7 +64,7 @@ global.in_battle=true</code>
     <instance objName="Player_inbattle" x="282" y="572" name="inst_765F34CB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Enemy_Soul_Field2" x="1298" y="608" name="inst_E3DEA976" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="BattleGround" x="676" y="619" name="inst_053C162B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Mama_Exploding_rabbit" x="1104" y="521" name="inst_61771515" locked="0" code="" scaleX="0.455040872097015" scaleY="0.400000005960464" colour="4294967295" rotation="0"/>
+    <instance objName="Mama_Exploding_rabbit" x="1103" y="516" name="inst_61771515" locked="0" code="" scaleX="0.455040872097015" scaleY="0.400000005960464" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

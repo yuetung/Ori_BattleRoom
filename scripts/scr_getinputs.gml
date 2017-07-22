@@ -1,3 +1,4 @@
+if (global.paused){exit}
 //Get the player's input
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
