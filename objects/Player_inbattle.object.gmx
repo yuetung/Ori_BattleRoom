@@ -3,7 +3,7 @@
   <spriteName>spr_Player_idle</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,58 +26,42 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-grav = 1;
+grav = Game_Control.grav;
 hsp = 0;
 hsp_carry = 0;
 vsp = 0;
-movespeed = 10;
+movespeed = Game_Control.movespeed;
 jumps = 0;
-
-jumpsmax = 2;
-
-jumpspeed_normal = 13;
-jumpspeed_powerup = 13;
-
+jumpsmax = Game_Control.jumpsmax;
+jumpspeed_normal = Game_Control.jumpspeed_normal;
+jumpspeed_powerup = Game_Control.jumpspeed_powerup;
 jumpspeed = jumpspeed_normal
 key_down = 0;
-attack_speed=20
-attack=3
-defence=3
-hp=50
+attack_speed=Game_Control.attack_speed;
+attack=Game_Control.attack;
+defence=Game_Control.defence;
+maxhp=Game_Control.maxhp;
+hp=maxhp;
+depth=-BattleGround.y;
+soul_crystal=Game_Control.soul_crystal;
+max_soul_energy=Game_Control.max_soul_energy;
+soul_energy=Game_Control.starting_soul_energy;
+max_soul_size=Game_Control.max_soul_size;
+min_soul_size=Game_Control.min_soul_size;
+soul_size=max_soul_size;
+soul_strength=scr_calculate_soul_strength(soul_crystal,soul_energy,Game_Control.crystal_location);
 //state machine initialization
 state=states.normal;
 
-
+// create soul field
+instance_create(x,BattleGround.y,Player_Soul_Field_back);
+instance_create(x,BattleGround.y,Player_Soul_Field_front);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>depth</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>-y-43</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -94,14 +78,21 @@ state=states.normal;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch (state)
+            <string>// State machine
+switch (state)
 {
     case states.normal: scr_player_battle_normal();break;
     case states.jumping: scr_player_battle_jumping();break;
     case states.sky_attack: scr_player_battle_sky_attack();break;
     case states.normal_attack: scr_player_battle_normal_attack();break;
+    case states.ground_airplane_attack: scr_player_battle_ground_airplane_attack();break;
+    case states.sky_airplane_attack: scr_player_battle_sky_airplane_attack();break;
     case states.squat: scr_player_battle_squat();break;
 }
+
+// Soul field changes
+soul_size=(max_soul_size-min_soul_size)*hp/maxhp+min_soul_size;
+soul_strength=scr_calculate_soul_strength(soul_crystal,soul_energy,Game_Control.crystal_location);
 
 </string>
           </argument>

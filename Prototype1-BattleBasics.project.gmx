@@ -24,28 +24,53 @@
     </sprites>
     <sprites name="Enemies&amp;Skills">
       <sprites name="Mama_Rabbit">
-        <sprite>sprites\spr_Exploding_rabbit</sprite>
-        <sprite>sprites\spr_rocket_rabbit</sprite>
-        <sprite>sprites\spr_small_expliding_rabbit</sprite>
+        <sprite>sprites\spr_Mama_Rabbit_placeholder</sprite>
+        <sprite>sprites\spr_Mama_Rabbit_All_Copy</sprite>
+        <sprite>sprites\spr_Mama_Rabbit_wiggle_ear</sprite>
+        <sprite>sprites\spr_jumping_rabbits</sprite>
+        <sprite>sprites\spr_Mama_Rabbit_fly</sprite>
+        <sprite>sprites\spr_rocket_rabbit_placeholder</sprite>
+        <sprite>sprites\spr_winged_bomb</sprite>
+        <sprite>sprites\spr_winged_bomb_original</sprite>
+        <sprite>sprites\spr_small_exploding_rabbit_placeholder</sprite>
+        <sprite>sprites\spr_falling_exploding_rabbit</sprite>
       </sprites>
     </sprites>
-    <sprites name="Misc">
+    <sprites name="BattleGrounds &amp; SoulFields">
       <sprite>sprites\spr_battleGround</sprite>
-      <sprite>sprites\spr_PlayerSoulField2</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv0_front</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv0_back</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv1_front</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv1_back</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv2_front</sprite>
+      <sprite>sprites\spr_PlayerSoulField_lv2_back</sprite>
+      <sprite>sprites\origina_soul_field</sprite>
       <sprite>sprites\spr_EnemySoulField2</sprite>
+    </sprites>
+    <sprites name="HUD &amp; Icons">
+      <sprite>sprites\spr_PlayerHealthDisplay</sprite>
+      <sprite>sprites\spr_EnemyHealthDisplay</sprite>
+      <sprite>sprites\spr_Ori_Icon</sprite>
+      <sprite>sprites\spr_Mama_Exploding_Rabbit_Icon</sprite>
+      <sprite>sprites\spr_IconTemplate</sprite>
+      <sprite>sprites\spr_EnemyIconTemplate</sprite>
+      <sprite>sprites\spr_Soul_Crystal</sprite>
+      <sprite>sprites\spr_dark_mark</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_getinputs.gml</script>
-    <script>scripts\scr_player_battle_animate.gml</script>
     <script>scripts\scr_player_battle_jumping.gml</script>
     <script>scripts\scr_player_battle_normal.gml</script>
     <script>scripts\scr_player_battle_normal_attack.gml</script>
+    <script>scripts\scr_player_battle_ground_airplane_attack.gml</script>
+    <script>scripts\scr_player_battle_sky_airplane_attack.gml</script>
     <script>scripts\scr_player_battle_sky_attack.gml</script>
     <script>scripts\scr_player_battle_sky_attack_old.gml</script>
     <script>scripts\scr_player_battle_squat.gml</script>
+    <script>scripts\scr_calculate_soul_strength.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Ori&amp;Skills">
@@ -62,30 +87,46 @@
       </objects>
       <objects name="Projectiles">
         <object>objects\Projectiles</object>
+        <object>objects\airplane_machine</object>
         <object>objects\Paper_Plane</object>
       </objects>
     </objects>
     <objects name="Enemies&amp;Skills">
       <object>objects\Enemy</object>
+      <object>objects\Enemy_Projectiles</object>
+      <object>objects\Enemy_Paper_Plane</object>
       <objects name="Mama Rabbit">
         <object>objects\Mama_Exploding_rabbit</object>
         <objects name="Skills">
           <object>objects\rocket_rabbit</object>
+          <object>objects\winged_bomb</object>
           <object>objects\small_exploding_rabbit</object>
+          <object>objects\falling_exploding_rabbit</object>
         </objects>
       </objects>
+    </objects>
+    <objects name="HUD">
+      <object>objects\Main_HUD</object>
+      <object>objects\Player_HP_Bar</object>
     </objects>
     <objects name="Misc">
       <object>objects\BattleGround</object>
       <object>objects\Enemy_Soul_Field2</object>
-      <object>objects\Player_Soul_Field2</object>
+      <object>objects\Player_Soul_Field_front</object>
+      <object>objects\Player_Soul_Field_back</object>
+      <object>objects\Enemy_Soul_Field_front</object>
+      <object>objects\Enemy_Soul_Field_back</object>
       <object>objects\Invisible_Wall</object>
-      <object>objects\pause</object>
+      <object>objects\timeline_worker</object>
+      <object>objects\Game_Control</object>
     </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\spawn_3_rocket_rabbit</timeline>
+    <timeline>timelines\spawn_5_winged_bomb_v1</timeline>
+    <timeline>timelines\spawn_5_winged_bomb_v2</timeline>
     <timeline>timelines\spawn_5_exploding_rabbit</timeline>
+    <timeline>timelines\spawn_13_falling_rabbit</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\Initialize_room</room>

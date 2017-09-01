@@ -21,11 +21,11 @@
             <kind>1</kind>
             <string>with (instance_create(x,BattleGround.bbox_top-1,rocket_rabbit))
    {
-    flyspeed = 15
-    final_ypos=100
+    flyspeed = 15;
+    final_ypos=100;
    }
 
-
+instance_create(x,BattleGround.bbox_top-1,Enemy_Paper_Plane);
 </string>
           </argument>
         </arguments>
@@ -53,8 +53,8 @@
             <kind>1</kind>
             <string>with (instance_create(x,BattleGround.bbox_top-1,rocket_rabbit))
    {
-    flyspeed = 15
-    final_ypos=225
+    flyspeed = 15;
+    final_ypos=225;
    }
 
 
@@ -85,8 +85,8 @@
             <kind>1</kind>
             <string>with (instance_create(x,BattleGround.bbox_top-1,rocket_rabbit))
    {
-    flyspeed = 15
-    final_ypos=350
+    flyspeed = 15;
+    final_ypos=350;
    }
 
 
@@ -117,10 +117,10 @@
             <kind>1</kind>
             <string>with (rocket_rabbit)
    {
-   fire=true
+   fire=true;
    }
 
-alarm[1]=60
+alarm[1]=60;
 </string>
           </argument>
         </arguments>

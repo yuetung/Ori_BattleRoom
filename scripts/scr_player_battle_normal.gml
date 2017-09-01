@@ -90,6 +90,13 @@ if (!global.paused){
     image_speed=attack_speed*image_number/200
     state=states.normal_attack
     }
+    else if key_x 
+    {
+    sprite_index=spr_Player_squat;
+    image_index=0
+    machine=instance_create(x,BattleGround.y,airplane_machine);
+    state=states.ground_airplane_attack
+    }
     else if key_down 
     {
     sprite_index=spr_Player_squat;

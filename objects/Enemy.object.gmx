@@ -25,32 +25,42 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_speed=0
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="Close_Combat">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if other.active==true{
-if (global.soulfield&lt;100 &amp;&amp; other.damage&gt;defence) {global.soulfield+=other.damage-defence}
-other.active=false
+            <string>//Enemy stats
+global.enemy=Enemy;
+attack=3;
+defence=1;
+maxhp=100;
+max_dark_energy=30;
+dark_mark=1;
+dark_mark_location[1]=12;
+max_soul_size=12;
+min_soul_size=6;
+jumpspeed = 20
+movespeed = 15;
+attack_speed=10;
+
+//HUD
+icon=spr_Mama_Exploding_Rabbit_Icon;
+HUD_color=c_aqua;
+
+//Standard Initialization
+hp=maxhp;
+dark_energy=max_dark_energy;
+soul_strength=scr_calculate_soul_strength(dark_mark,dark_energy,dark_mark_location);
+soul_size=max_soul_size;
+vsp=0;
+alarm[0]=10;
+alarm[1]=10;
+depth=-BattleGround.y;
+image_speed=0;
+grav=Game_Control.grav;
+
+//Soul Fields
+with (instance_create(x,BattleGround.y,Enemy_Soul_Field_back)) {
+    image_blend=c_red;    
+}
+with (instance_create(x,BattleGround.y,Enemy_Soul_Field_front)) {
+    image_blend=c_red;    
 }
 </string>
           </argument>

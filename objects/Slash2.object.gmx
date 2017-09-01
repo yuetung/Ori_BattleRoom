@@ -27,7 +27,6 @@
             <kind>1</kind>
             <string>damage_multiplier=1
 active=true
-damage=Player_inbattle.attack*damage_multiplier
 </string>
           </argument>
         </arguments>

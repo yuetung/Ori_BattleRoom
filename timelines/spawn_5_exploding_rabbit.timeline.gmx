@@ -19,10 +19,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit))
-   {
-   jumpspeed = 10
-    movespeed = 15
+            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit)){
+   jumpspeed = 10;
+   movespeed = 15;
    }
 
 
@@ -51,10 +50,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit))
-   {
-   jumpspeed = 12
-    movespeed = 15
+            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit)){
+   jumpspeed = 12;
+   movespeed = 15;
    }
 
 
@@ -83,13 +81,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit))
-   {
-   jumpspeed = 14
-    movespeed = 15
+            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit)){
+   jumpspeed = 14;
+   movespeed = 15;
    }
-
-
 </string>
           </argument>
         </arguments>
@@ -115,12 +110,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit))
-   {
-   jumpspeed = 15
-    movespeed = 15
+            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit)){
+   jumpspeed = 15;
+   movespeed = 15;
    }
-
 
 </string>
           </argument>
@@ -147,13 +140,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit))
-   {
-   jumpspeed = 16
-    movespeed = 20
+            <string>with (instance_create(x,BattleGround.bbox_top-1,small_exploding_rabbit)){
+   jumpspeed = 16;
+   movespeed = 15;
    }
 
-alarm[1]=60
+alarm[1]=60;
 </string>
           </argument>
         </arguments>
