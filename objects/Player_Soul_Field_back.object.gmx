@@ -66,7 +66,11 @@ current_soul_size=Player_inbattle.soul_size;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x=Player_inbattle.x;
+            <string>//turn invisible in physical view
+if (global.soul_view==false) {image_alpha=0}
+else {image_alpha=1}
+
+x=Player_inbattle.x;
 if (Player_inbattle.soul_strength!=current_soul_strength) {
     switch (Player_inbattle.soul_strength)
     {

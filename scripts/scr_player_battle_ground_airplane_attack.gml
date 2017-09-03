@@ -1,9 +1,4 @@
-if (!global.paused){
-    image_speed=0.1;
-}
-
-
-if (!keyboard_check(ord("X")) || global.paused) {
+if (!keyboard_check(ord("X"))) {
 state=states.normal
 with (machine) {instance_destroy()}
 }

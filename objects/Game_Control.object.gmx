@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>// pause window
 global.paused=0;
+global.soul_view=false;
 
 //Initialize physics
 grav=1;
@@ -77,14 +78,7 @@ crystal_location[5]=185;
             <kind>1</kind>
             <string>//pause window
 if (global.paused) {
-    draw_set_color(c_black);
-    draw_set_alpha(0.5);
-    draw_rectangle(0,0,room_width,room_height,0);
-    draw_set_halign(fa_center);
-    draw_set_color(c_white);
-    draw_set_alpha(1);
-    draw_text(room_width/2,room_height/2,"Game Paused");
-    draw_set_color(c_black);
+    draw_sprite_stretched(global.PauseScreenShot, 0, 0, 0, view_wview, room_height);
 }
 </string>
           </argument>
@@ -110,11 +104,24 @@ if (global.paused) {
             <kind>1</kind>
             <string>// pause window
 
-if (global.paused = 0) {
-    global.paused = 1;
+if (global.paused = false) {
+    width = surface_get_width(application_surface);
+    height = surface_get_height(application_surface);
+    global.PauseScreenShot = sprite_create_from_surface(application_surface, 0, 0, width, height, false, false, 0, 0);
+    room_persistent = true;
+    global.RoomBeforePause = room;
+    room_goto(room_pause);
+    global.paused = true;
+    global.soul_view=true;    //test
 }
 else {
-    global.paused=0;
+    global.paused=false;
+    room_goto(global.RoomBeforePause);
+    if (global.RoomBeforePause != -1) {
+    global.RoomBeforePause = -1;
+    sprite_delete(global.PauseScreenShot);
+    global.soul_view=false;   //test
+}
 }
 
 </string>

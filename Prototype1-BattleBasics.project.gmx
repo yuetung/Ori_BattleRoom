@@ -129,8 +129,9 @@
     <timeline>timelines\spawn_13_falling_rabbit</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\Initialize_room</room>
-    <room>rooms\Mama_Rabbit</room>
+    <room>rooms\room_Initialize</room>
+    <room>rooms\room_Mama_Rabbit</room>
+    <room>rooms\room_pause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
